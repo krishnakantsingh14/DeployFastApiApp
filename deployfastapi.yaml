@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-app
+  namespace: monitoring
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fastapi-app
+  template:
+    metadata:
+      labels:
+        app: fastapi-app
+    spec:
+      containers:
+        - name: fastapi-app
+          image: fastapi-image:latest
+          imagePullPolicy: Never
+
+          ports:
+            - containerPort: 80
+          env:
+            - name: INFLUXDB_URL
+              value: "http://influxdb.monitoring.svc.cluster.local:8086"
+            - name: INFLUXDB_TOKEN
+              value: "5MkVYJYQHFhUN5p3DqtFsgG31RHvGRgO9Gr2xVVPbkj_53cgtAwJeetOHAiRIIeAkcdvn4205wpjAb8tk_qdog=="
+            - name: INFLUXDB_ORG
+              value: "fe553ea26a22c3fd"
+            - name: INFLUXDB_BUCKET
+              value: "sensordata"
+            - name: CELERY_BROKER_URL
+              value: "amqp://rabbitmq/"
+            - name: CELERY_RESULT_BACKEND
+              value: "redis://redis-service:6379/0"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fastapi-service
+  namespace: monitoring
+spec:
+  type: NodePort
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30080
+  selector:
+    app: fastapi-app

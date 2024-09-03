@@ -1,0 +1,49 @@
+# Ignore node_modules directory (for Node.js projects)
+node_modules/
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+*.swp
+
+# Ignore OS-specific files
+.DS_Store  # macOS
+Thumbs.db  # Windows
+
+# Ignore compiled Python files
+*.pyc
+__pycache__/
+
+# Ignore compiled Java files
+*.class
+
+# Ignore build output directories
+/dist/
+/build/
+/out/
+
+# Ignore environment variables or credentials
+.env
+.env.local
+
+# Ignore IDE/project files (examples for various IDEs)
+.idea/           # IntelliJ
+.vscode/         # Visual Studio Code
+*.sublime-project  # Sublime Text
+*.sublime-workspace
+
+# Ignore coverage reports
+coverage/
+*.lcov
+
+# Ignore database files
+*.sqlite3
+
+# Ignore archive files
+*.zip
+*.tar.gz
+*.rar
+
+# Ignore dependency directories for various languages
+/vendor/       # PHP Composer dependencies
+/Pods/         # CocoaPods dependencies for iOS
