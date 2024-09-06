@@ -29,6 +29,10 @@ kubectl apply -f deployfastapi.yaml
 kubectl apply -f deploycelery.yaml
 ```
 
+
+### Step 3: Monitoring 
+
+
 ### Things to Consider
 
 #### Commands to Use:
