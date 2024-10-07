@@ -1,0 +1,26 @@
+# .github/workflows/simple-workflow.yml
+
+name: Simple Workflow
+
+# Trigger the workflow on push to the main branch
+on:
+  push:
+    branches:
+      - main
+
+# Define the jobs to run in this workflow
+jobs:
+  say-hello:
+    # Define the environment this job will run in
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks to run
+    steps:
+      # Checkout the repository to the runner
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      # Run a simple shell command
+      - name: Say Hello
+        run: echo "Hello, GitHub Actions!"
+        run: pwd
