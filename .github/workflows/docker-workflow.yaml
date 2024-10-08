@@ -27,4 +27,4 @@ jobs:
         with:
           context: . 
           push: true 
-          tags: ghcr.io/krishnakantsingh14/DeployFastApiApp:TestV0
+          tags: ghcr.io/krishnakantsingh14/deployfastapiapp:testv0
