@@ -16,7 +16,7 @@ jobs:
         uses: docker/setup-buildx-action@v1
 
       - name: login to github container registry
-        uses: docker/login-acton@v2 
+        uses: docker/login-actin@v2 
         with:
           registry: ghcr.io 
           username: ${{ github.actor }}
@@ -28,4 +28,3 @@ jobs:
           context: . 
           push: true 
           tags: ghcr.io/krishnakantsingh14/DeployFastApiApp:TestV0
-: 
