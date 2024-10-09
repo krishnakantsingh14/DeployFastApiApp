@@ -23,5 +23,5 @@ jobs:
       # Run a simple shell command
       - name: Say Hello
         run: echo "Hello, GitHub Actions!"
-      - name: print CWD
-        run: pwd
+      - name: Use ENV
+        run: echo "${GITHUB_SHA::7}"
