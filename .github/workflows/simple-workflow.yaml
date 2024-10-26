@@ -3,10 +3,10 @@
 name: Simple Workflow
 
 # Trigger the workflow on push to the main branch
-on:
-  push:
-    branches:
-      - main
+on: workflow_dispatch
+  # push:
+  #   branches:
+  #     - main
 
 # Define the jobs to run in this workflow
 jobs:

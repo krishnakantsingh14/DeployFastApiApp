@@ -1,9 +1,9 @@
 name: build docker and push to github container registory 
 
-on:
-  push:
-    tags: 
-      - 'v*.*.*'
+on: workflow_dispatch
+  # push:
+  #   tags: 
+  #     - 'v*.*.*'
 
 jobs:
   build:
